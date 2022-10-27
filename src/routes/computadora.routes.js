@@ -6,7 +6,7 @@ const controller = new computadoraController()
  routerComputadoras.post("/crear",(req,res) =>{
     controller.crearComputadora(req,res)
  })
- routerComputadoras.delete("/borrar/:id", (req,res) =>{
+ routerComputadoras.delete("/eliminar/:id", (req,res) =>{
     controller.eliminarComputadora(req,res)
  })
  routerComputadoras.get("/obtener",(req,res) =>{

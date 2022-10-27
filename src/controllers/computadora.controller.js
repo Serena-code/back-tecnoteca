@@ -27,14 +27,14 @@ export default class computadoraController{
         }
     }
     async usoComputadora(req,res){
-        const {nombre, dni, fecha_inicio, horario_inicio,motivo} = req.body
+        const {id, nombre, dni, fecha_inicio, horario_inicio,motivo} = req.body
         const {id_computadora} = req.result;
         const newPc = {
             nombre,dni,fecha_inicio,horario_inicio,motivo,id
         }
         try{
             let result = await pool.query("SELECT id from registro_computadoras where en_uso = 0")
-            await pool.query("UPDATE registro_computadoras SET en_uso = 1 WHERE id = id_computadoras")
+            await pool.query("UPDATE registro_computadoras SET en_uso = 1 WHERE id = id_computadora")
             await pool.query("INSERT INTO uso_computadoras set ?", [newPc])
             return res.status(201).json({error:false,message:"se creo la reserva"})
         }catch(error){
