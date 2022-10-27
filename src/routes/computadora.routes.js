@@ -9,8 +9,24 @@ const controller = new computadoraController()
  routerComputadoras.delete("/eliminar/:id", (req,res) =>{
     controller.eliminarComputadora(req,res)
  })
- routerComputadoras.get("/obtener",(req,res) =>{
-   controller.usoComputadora(req,res)
+ 
+ routerComputadoras.get("/listar",(req,res) =>{
+    controller.listarComputadoras(req,res)
 })
+//RUTAS PARA TABLA USOS-COMPUTADORAS
+routerComputadoras.post("/reservas/crear",(req,res) =>{
+   controller.reservarComputadora(req,res)
+})
+
+routerComputadoras.get("/reservas/listar",(req,res)=>{
+   controller.reservasListar(req,res)
+})
+
+routerComputadoras.delete("/reservas/eliminar/:id",(req,res)=>{
+   controller.reservasEliminar(req,res)
+})
+
+
+
     
 export default routerComputadoras
