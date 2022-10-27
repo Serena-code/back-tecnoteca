@@ -9,5 +9,8 @@ const controller = new computadoraController()
  routerComputadoras.delete("/borrar/:id", (req,res) =>{
     controller.eliminarComputadora(req,res)
  })
+ routerComputadoras.get("/obtener",(req,res) =>{
+   controller.usoComputadora(req,res)
+})
     
 export default routerComputadoras
