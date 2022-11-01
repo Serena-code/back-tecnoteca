@@ -9,8 +9,20 @@ const controller = new salaController()
  routerSalas.delete("/eliminar/:id",(req,res) =>{
     controller.eliminarSala(req,res)
  })
- routerSalas.get("7obtener",(req,res) =>{
-    controller.usoSala (req,res)
- })
-    
+  
+ routerSalas.get("/listar",(req,res) =>{
+   controller.listarSalas(req,res)
+})
+//RUTAS PARA TABLA USOS-COMPUTADORAS
+routerSalas.post("/reservas/crear",(req,res) =>{
+  controller.reservarSalas(req,res)
+})
+
+routerSalas.get("/reservas/listar",(req,res)=>{
+  controller.reservasSalasListar(req,res)
+})
+
+routerSalas.delete("/reservas/eliminar/:id",(req,res)=>{
+  controller.reservasSalasEliminar(req,res)
+})
 export default routerSalas

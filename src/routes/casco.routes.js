@@ -9,8 +9,21 @@ const controller = new cascoController()
  routerCasco.delete("/eliminar/:id",(req,res) =>{
     controller.eliminarCasco(req,res)
  })
- routerCasco.get("/obtener", (req,res) =>{
-    controller.usoCasco(req,res)
- })
+ routerCasco.get("/listar",(req,res) =>{
+   controller.listarCasco(req,res)
+})
+//RUTAS PARA TABLA USOS-CASCO
+routerCasco.post("/reservas/crear",(req,res) =>{
+  controller.reservarCasco(req,res)
+})
+
+routerCasco.get("/reservas/listar",(req,res)=>{
+  controller.reservasCascoListar(req,res)
+})
+
+routerCasco.delete("/reservas/eliminar/:id",(req,res)=>{
+  controller.reservasCascoEliminar(req,res)
+})
+
 
 export default routerCasco
