@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "main":"node src/index.js",
     "dev": "nodemon src/index.js"
   },
   "keywords": [],
