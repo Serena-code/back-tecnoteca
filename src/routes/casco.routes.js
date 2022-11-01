@@ -1,5 +1,5 @@
 import {Router} from "express"
-import computadoraController from "../controllers/casco.controller.js"
+import cascoController from "../controllers/casco.controller.js"
 const controller = new cascoController()
  const routerCasco = Router()
 

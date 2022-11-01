@@ -1,5 +1,5 @@
 import {Router} from "express"
-import computadoraController from "../controllers/sala.controller.js"
+import salaController from "../controllers/sala.controller.js"
 const controller = new salaController()
  const routerSalas = Router()
 
@@ -13,7 +13,7 @@ const controller = new salaController()
  routerSalas.get("/listar",(req,res) =>{
    controller.listarSalas(req,res)
 })
-//RUTAS PARA TABLA USOS-COMPUTADORAS
+//RUTAS PARA TABLA USOS-SALAS
 routerSalas.post("/reservas/crear",(req,res) =>{
   controller.reservarSalas(req,res)
 })
