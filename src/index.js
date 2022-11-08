@@ -1,14 +1,18 @@
 import express from "express";
-const app = express()
+
+
 
 import {pool} from "./db/connection.js"
 import routerCasco from "./routes/casco.routes.js";
 import routerComputadoras from "./routes/computadora.routes.js"
 import routerSalas from "./routes/sala.routes.js";
+import cors from "cors"
+const app = express()
+
 app.set('port', process.env.PORT || 3000);
 
 app.use(express.json());
-
+app.use(cors())
 // rutas
 
 app.use('/api/computadoras', routerComputadoras)
