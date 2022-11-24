@@ -4,10 +4,10 @@ import { promisify } from 'util';
 
 
 export const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'tecnoteca'
+    host: 'b6hykqpa2uaxmdabhq6d-mysql.services.clever-cloud.com',
+    user: 'uyxzgxle6mvoanrn',
+    password: 'JvVgBxAfo1351umvDOjH',
+    database: 'b6hykqpa2uaxmdabhq6d'
 })
 
 
